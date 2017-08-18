@@ -39,7 +39,7 @@ class Robot
     elsif ['E', 'W'].include?(orientation)
       x = ['W', ' ', 'E'].find_index(orientation) - 1
     else
-      raise Excpetion.new("Command isn't supported: #{c}")
+      raise Excpetion.new("Command isn't supported: #{orientation}")
     end
     point.x += x
     point.y += y
@@ -72,7 +72,7 @@ class Robot
   end
 
 end
-#     N N
+#       N
 #   0 0 0 0 0
 # W 0 0 0 0 0 E
 #   0 0 0 0 0
