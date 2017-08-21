@@ -28,7 +28,7 @@ class Position
   attr_accessor :poi , :o
 
   def initialize(poi, o)
-    raise Exception.new("Invalid point") unless poi.is_a? Point
+    raise Exception.new("Invalid point: #{poi.class}") unless poi.is_a? Point
     @poi = poi.dup
     raise Exception.new("Invalid orientation: #{o}") unless Orientations.include?(o)
     @o = o
@@ -42,7 +42,7 @@ end
 
 class Command
   def go(pos)
-      raise Exception.new("Invalid point") unless pos.is_a? Position
+      raise Exception.new("Invalid position: #{pos.class}") unless pos.is_a? Position
   end
 end
 
